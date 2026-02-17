@@ -464,6 +464,8 @@ lazy val parser = crossProject(JSPlatform, JVMPlatform).
     Compile / unmanagedResourceDirectories ++= (sharedResources / Compile / unmanagedResourceDirectories).value,
     Compile / resourceGenerators           ++= (sharedResources / Compile / resourceGenerators).value
   )
+// Dev convenience: don't fail the build on Java warnings
+ThisBuild / Compile / javacOptions := (ThisBuild / Compile / javacOptions).value.filterNot(_ == "-Werror")
 
 lazy val parserJVM = parser.jvm
 lazy val parserJS  = parser.js
