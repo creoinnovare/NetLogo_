@@ -77,3 +77,4 @@ tmp/
 **/package-lock.json
 **/yarn.lock
 **/tmp/
+netlogo-gui/colorpicker
